@@ -32,7 +32,8 @@
     "react-tween-state": "0.0.5",
     "source-map-support": "^0.2.10",
     "suitcss-preprocessor": "^0.4.0",
-    "webpack":"*"
+    "webpack":"*",
+    "glob":"*",
   },
   "devDependencies": {
     "babel-core": "^5.1.11",
