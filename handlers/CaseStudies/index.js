@@ -34,8 +34,9 @@ CaseStudies.displayName = 'CaseStudies';
 export default Resolver.createContainer(CaseStudies, {
   resolve: {
     caseStudies() {
+      var port = process.env.PORT || 4444;
       return fetch(
-        `http://localhost:4444/api/contentful?content_type=case_study`
+        'http://localhost:' + port + '/api/contentful?content_type=case_study'
       ).then(n => n.json());
     }
   },

@@ -49,7 +49,8 @@ app.get('*', function(req, res) {
 });
 
 debug('app server starting on 4444');
-var server = app.listen(4444, function () {
+var port = process.env.PORT || 4444;
+var server = app.listen(port, function () {
   var host = server.address().address;
   var port = server.address().port;
 

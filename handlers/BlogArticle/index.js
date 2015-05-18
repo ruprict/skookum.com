@@ -49,7 +49,8 @@ BlogArticle.displayName = 'BlogArticle';
 export default Resolver.createContainer(BlogArticle, {
   resolve: {
     article(props) {
-      return fetch(`http://localhost:4444/api/contentful/${props.params.slug}`).then(n => n.json());
+      var port = process.env.PORT || 4444;
+      return fetch('http://localhost:' + port +'/api/contentful/${props.params.slug}').then(n => n.json());
     }
   },
 });

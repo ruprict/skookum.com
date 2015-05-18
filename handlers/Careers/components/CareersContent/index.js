@@ -102,8 +102,9 @@ export default Resolver.createContainer(CareersContent, {
         'photoUrl',
       ];
 
+      var port = process.env.PORT || 4444;
       return fetch(
-        `http://localhost:4444/api/team?fields=${FIELDS.toString()}`
+        'http://localhost:' + port + '/api/team?fields=${FIELDS.toString()}'
       ).then(n => n.json());
     }
   }

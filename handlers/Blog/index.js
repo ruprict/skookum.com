@@ -78,7 +78,8 @@ export default Resolver.createContainer(Blog, {
   resolve: {
     featured() {
       // TODO: cache this
-      return fetch('http://localhost:4444/api/contentful/featured').then(n => n.json());
+      var port = process.env.PORT || 4444;
+      return fetch('http://localhost:' + port + '/api/contentful/featured').then(n => n.json());
     },
     articles(props, context) {
       console.log(
@@ -86,8 +87,9 @@ export default Resolver.createContainer(Blog, {
         qs.stringify(props.params),
         props
       );
+      var port = process.env.PORT || 4444;
       return fetch(
-        `http://localhost:4444/api/contentful?${qs.stringify(props.params)}`
+        'http://localhost:' + port + '/api/contentful?${qs.stringify(props.params)}'
       ).then(n => n.json());
     },
   },

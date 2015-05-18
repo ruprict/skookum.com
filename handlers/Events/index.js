@@ -19,7 +19,8 @@ Events.displayName = 'Events';
 export default Resolver.createContainer(Events, {
   resolve: {
     events() {
-      return fetch('http://localhost:4444/api/events').then(n => n.json());
+      var port = process.env.PORT || 4444;
+      return fetch('http://localhost:' + port + '/api/events').then(n => n.json());
     }
   }
 });
