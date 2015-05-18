@@ -33,6 +33,7 @@
     "source-map-support": "^0.2.10",
     "suitcss-preprocessor": "^0.4.0",
     "webpack":"*",
+    "rework-webpack-loader": "^0.2.0",
     "glob":"*"
   },
   "devDependencies": {
